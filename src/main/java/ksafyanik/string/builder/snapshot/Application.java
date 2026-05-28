@@ -1,13 +1,15 @@
 package ksafyanik.string.builder.snapshot;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-@SpringBootApplication
 public class Application {
 
 	public static void main(String[] args) {
-		SpringApplication.run(Application.class, args);
+		StringBuilderSnapshot stringBuilderSnapshotTest = new StringBuilderSnapshot("Тайная комната снова открыта!");
+		System.out.println("Состояние StringBuilderSnapshot до изменения: " + stringBuilderSnapshotTest);
+		stringBuilderSnapshotTest.append(" Враги наследника, трепещите!");
+		System.out.println("Состояние StringBuilderSnapshot после изменения: " + stringBuilderSnapshotTest);
+		stringBuilderSnapshotTest.undo();
+		System.out.println("Состояние StringBuilderSnapshot после применения метода undo(): " + stringBuilderSnapshotTest);
 	}
 
 }
